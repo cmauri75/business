@@ -31,7 +31,7 @@ compareTable[,2] <- linreg$fitted.values
 #se la plotto ho la perfezione se ho una retta di 45°
 plot(compareTable)
 
-#controllo che vi sia buona correlazione, ce l'ho, però questa ha dei limiti (con molti numeri riesco sempre a trovare un buon algoritmo che fitta)
+#controllo che vi sia buona correlazione tra i dati , ce l'ho, però questa ha dei limiti (con molti numeri riesco sempre a trovare un buon algoritmo che fitta)
 cor(linreg$fitted.values,data$Rating)
 #graficamente vedo che per numeri bassi non fitta bene
 #infatti:

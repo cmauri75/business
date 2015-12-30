@@ -22,3 +22,5 @@ predAttrition$priority=predAttrition$performance*predAttrition$probToLeave
 orderPredAttrition=predAttrition[order(predAttrition$priority,decreasing = TRUE),]
 
 head(orderPredAttrition,20)
+
+best <- predAttrition[predAttrition$performance>0.9,]

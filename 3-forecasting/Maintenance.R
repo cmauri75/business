@@ -6,8 +6,8 @@ summary(data)
 
 #calcolo il modello lineare su tutte le variabili, tranne broken
 linregmodel = lm(lifetime~.-broken,data=data)
-#sembra che il teamC e soprattutto il provider3 siano coloro che fanno rompere più pezzi
-#ma non è affidabile in quanto quelli non rotti hanno un lifetime non predefinito
+#sembra che il teamC e soprattutto il provider3 (che è anche quello significativo)
+#siano coloro che fanno rompere più pezzi ma non è affidabile in quanto quelli non rotti hanno un lifetime non predefinito
 summary(linregmodel)
 
 library(survival)
@@ -30,3 +30,4 @@ Forecast$RemainingLT=Forecast$Ebreak-data$lifetime
 #calcolo dove agire prima
 Forecast=Forecast[order(Forecast$RemainingLT),]
 ActionsPriority=Forecast[Forecast$broken==0,]
+
